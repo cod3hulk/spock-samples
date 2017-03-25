@@ -12,7 +12,7 @@ class CalculatorSpec extends Specification {
         def result = calculator.add(1, 1)
 
         then: "The result is the sum of the two numbers"
-        result == 3
+        result == 2
     }
 
     def "subtract two numbers and return the difference"() {
