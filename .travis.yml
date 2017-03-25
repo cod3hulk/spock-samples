@@ -2,7 +2,8 @@ language: java
 sudo: false
 jdk:
   - oraclejdk8
+script:
+  - mvn clean test jacoco:report
 after_success:
-  - mvn clean test jacoco:report coveralls:report
   - bash <(curl -s https://codecov.io/bash)
 
