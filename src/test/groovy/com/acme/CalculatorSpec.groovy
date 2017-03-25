@@ -5,10 +5,27 @@ import spock.lang.Specification
 class CalculatorSpec extends Specification {
 
     def "adding two numbers and return the sum"() {
-        when: "A new calculator is created"
+        given: "A calculator"
         def calculator = new Calculator();
 
-        then: "1 plus 1 is 2"
-        calculator.add(1, 1) == 2
+        when: "Two numbers are added"
+        def result = calculator.add(1, 1)
+
+        then: "The result is the sum of the two numbers"
+        result == 3
+    }
+
+    def "subtract two numbers and return the difference"() {
+        given: "A calculator"
+        def calculator = new Calculator();
+
+        expect: "Two numbers are added"
+        calculator.sub(a, b) == c
+
+        where: "The result is the difference of the two numbers"
+        a | b || c
+        1 | 1 || 0
+        1 | 2 || -1
+        2 | 1 || 1
     }
 }
